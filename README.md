@@ -178,45 +178,45 @@ model User {
 }
 ```
 
-## 🚀 Scripts Disponibles
+## 🚀 Available Scripts
 
 ```bash
-# Desarrollo
-npm run dev          # Inicia el servidor de desarrollo
+# Development
+npm run dev          # Start development server
 
-# Producción
-npm run build        # Construye la aplicación para producción
-npm start            # Inicia el servidor de producción
+# Production
+npm run build        # Build application for production
+npm start            # Start production server
 
 # Prisma
-npx prisma studio    # Abre Prisma Studio (UI para la DB)
-npx prisma generate  # Genera el cliente de Prisma
-npx prisma migrate dev  # Crea y aplica migraciones
+npx prisma studio    # Open Prisma Studio (DB UI)
+npx prisma generate  # Generate Prisma client
+npx prisma migrate dev  # Create and apply migrations
 
 # Linting
-npm run lint         # Ejecuta ESLint
+npm run lint         # Run ESLint
 ```
 
 ## 📝 API Endpoints
 
-### Autenticación
+### Authentication
 
-- `GET /api/auth/signin` - Página de login
-- `GET /api/auth/signout` - Cerrar sesión
-- `GET /api/auth/session` - Obtener sesión actual
+- `GET /api/auth/signin` - Login page
+- `GET /api/auth/signout` - Logout
+- `GET /api/auth/session` - Get current session
 
 ### Tasks
 
-- `GET /api/tasks` - Obtener todas las tareas del usuario
-- `POST /api/tasks` - Crear una nueva tarea
-- `PUT /api/tasks/[id]` - Actualizar una tarea
-- `DELETE /api/tasks/[id]` - Eliminar una tarea
+- `GET /api/tasks` - Get all user tasks
+- `POST /api/tasks` - Create a new task
+- `PUT /api/tasks/[id]` - Update a task
+- `DELETE /api/tasks/[id]` - Delete a task
 
-## 🎨 Componentes Principales
+## 🎨 Main Components
 
-### Card con Animaciones
+### Card with Animations
 
-Las cards utilizan Framer Motion para animaciones suaves:
+Cards use Framer Motion for smooth animations:
 
 ```tsx
 <motion.div
@@ -225,13 +225,13 @@ Las cards utilizan Framer Motion para animaciones suaves:
   exit={{ opacity: 0, scale: 0.95 }}
   transition={{ duration: 0.25 }}
 >
-  {/* Contenido */}
+  {/* Content */}
 </motion.div>
 ```
 
-### Task List con AnimatePresence
+### Task List with AnimatePresence
 
-Las tareas se animan al entrar y salir:
+Tasks animate in and out:
 
 ```tsx
 <AnimatePresence mode="popLayout">
@@ -243,42 +243,23 @@ Las tareas se animan al entrar y salir:
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.2, delay: index * 0.05 }}
     >
-      {/* Card de tarea */}
+      {/* Task card */}
     </motion.div>
   ))}
 </AnimatePresence>
 ```
 
-## 🔒 Seguridad
+## 🔒 Security
 
-- ✅ Autenticación OAuth con GitHub
-- ✅ Sesiones seguras con NextAuth
-- ✅ Validación de datos con Zod
-- ✅ Protección CSRF
-- ✅ Variables de entorno para secretos
+- ✅ OAuth authentication with GitHub
+- ✅ Secure sessions with NextAuth
+- ✅ Data validation with Zod
+- ✅ CSRF protection
+- ✅ Environment variables for secrets
 
-## 🌐 Despliegue
+## 🤝 Contributing
 
-### Vercel (Recomendado)
-
-1. Sube tu código a GitHub
-2. Importa el proyecto en [Vercel](https://vercel.com)
-3. Configura las variables de entorno
-4. Despliega automáticamente
-
-### Variables de entorno en producción
-
-```env
-DATABASE_URL="tu-url-de-base-de-datos-producción"
-NEXTAUTH_URL="https://tu-dominio.com"
-NEXTAUTH_SECRET="secret-seguro-para-produccion"
-GITHUB_ID="tu-github-client-id"
-GITHUB_SECRET="tu-github-client-secret"
-```
-
-## 🤝 Contribuir
-
-Las contribuciones son bienvenidas. Por favor:
+Contributions are welcome. Please:
 
 1. Fork the project
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
